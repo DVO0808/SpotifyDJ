@@ -1,18 +1,104 @@
-.spotify{
+@font-face {
+    font-family: AlarmClock;
+    src: url('../images/alarmclock.ttf');
+}
 
-  border: 3px solid black;
 
-  margin: 80px;
-  padding: 100px;
-  height: 550px;
+.navbar{
+
+	
+	background-image: none !important;
+	background-color: #190000 !important;
+	border: none !important;
+	color: white;
+
+
+
+}
+
+
+.btn-default{
+
+	background-image: none !important;
+	background-color: rgb(192,192,192) !important;
+	color: #4c0000 !important;
+	font-weight: bold !important;
+}
+
+.btn{
+
+	background-image: none !important;
+	background-color: rgb(192,192,192) !important;
+	color: #4c0000 !important;
+	font-weight: bold !important;
+}
+
+
+.navbar-btn{
+
+	background-image: none !important;
+	background-color: rgb(192,192,192) !important;
+	color: #4c0000 !important;
+	font-weight: bold !important;
+
+}
+
+.navbar-default{
+
+	border: none;
+	color: white;
+}
+
+body{
+
+	  background: url('../images/StainlessSteel.jpg') no-repeat fixed center !important;
+}
+.mainContainer{
+
+  margin-bottom: 80px;
+  margin-top: 80px;
+  padding: 5px;
+  height: 850px;
+
+
 }
 
 .footer{
 
-	background-color: #E0E0E0;
+	background-color: #000;
 	padding: 15px;
+	color: white;
+}
+
+.spotify{
+    padding: 0px;
+    margin: 0px;
+
+    display: inline-block;
 }
 
 
+#display{
+  font-size: 126px;
+  font-family: AlarmClock;
+  font-weight: bold;
+  text-align: center;
+  -webkit-text-fill-color: #4c0000;
+  text-shadow: 0 0 35px #000 , 0 0 30px #000;
+  margin-top: 225px;
+  margin-left: 46px;
+  display: block;
+}
+
+.text{
+
+	font-size: 24px;
+	font-weight: bold;
+
+	-webkit-text-fill-color: #000;
+  text-shadow: 0 0 65px #190000, 0 0 60px #190000;
+  margin-left: 134px;
+  display: block;
+}
 
 
