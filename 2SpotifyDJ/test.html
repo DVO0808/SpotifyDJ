@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- md bootstrap css cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css">
+    <!--CSS-->
+    <link href="public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="public/css/tonieStyle.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Spotify DJ</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-center">
+        </form>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+<!-- loginform -->
+  <div id="loginForm" class="container col-md-6">
+    <!--Form with header-->
+    <div class="card">
+        <div class="card-block">
+            <!--Header-->
+            <div class="form-header stylish-color">
+                <h3 class="mdb-color white-text"><i class="fa fa-lock"></i> Login:</h3>
+            </div>
+            <!--Body-->
+            <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                <input id="emailLogin" type="text" id="form2" class="form-control">
+                <label for="form2">Your email</label>
+            </div>
+            <div class="md-form">
+                <i class="fa fa-lock prefix"></i>
+                <input id="passwordLogin" type="password" id="form4" class="form-control">
+                <label for="form4">Your password</label>
+            </div>
+            <div class="text-xs-center">
+                <button id="logIn" type="submit" class="btn btn-deep-purple">Login</button>
+            </div>
+        </div>
+    </div>
+    <!--/Form with header-->
+  </div>
+
+  <!-- signup form -->
+  <!--Form with header-->
+  <div id="signUpForm" class="container col-md-6">
+  <div class="card">
+    <div class="card-block">
+      <!--Header-->
+      <div class="form-header stylish-color">
+        <h3 class="mdb-color white-text"><i class="fa fa-user"></i> Sign Up:</h3>
+      </div>
+      <!--Body-->
+      <div class="md-form">
+        <i class="fa fa-envelope prefix"></i>
+        <input type="text" id="form2" class="form-control">
+        <label for="form2">Your username</label>
+      </div>
+      <div class="md-form">
+        <i class="fa fa-envelope prefix"></i>
+        <input type="text" id="form2" class="form-control">
+        <label for="form2">Your email</label>
+      </div>
+      <div class="md-form">
+        <i class="fa fa-lock prefix"></i>
+        <input type="password" id="form4" class="form-control">
+        <label for="form4">Your password</label>
+      </div>
+      <div class="text-xs-center">
+        <button class="btn btn-deep-purple">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--/Form with header-->
+
+    <!--Footer-->
+    <footer class="page-footer blue center-on-small-only">
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2015 Copyright: Nisu, Lola, Tonie
+            </div>
+        </div>
+        <!--/.Copyright-->
+    </footer>
+    <!--/.Footer-->
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="public/js/app.js"></script>
+    <script type="text/javascript">
+        $('#signUp').on("click", function() {
+            var userInput = {
+                userName: $('#userName').val().trim(),
+                email: $('#emailSignUp').val().trim(),
+                password: $('#passwordSignUp').val().trim(),
+            }
+            var currentURL = window.location.origin;
+            $.post(currentURL + '/api/newuser', userInput, function(data) {
+                $('#modal1').closeModal();
+                window.location.replace("/users/" + data.id);
+            });
+            return false;
+        });
+        $('#logIn').on("click", function() {
+            var userInput = {
+                email: $('#emailLogin').val().trim(),
+                password: $('#passwordLogin').val().trim()
+            }
+            var currentURL = window.location.origin;
+            $.post(currentURL + '/login', userInput, function(data) {
+                if (data.url) {
+                    window.location = data.url;
+                } else if (data.errorMessage) {
+                    alert(data.errorMessage);
+                } else {
+                    alert("Server failure.")
+                }
+            });
+            return false;
+        });
+    </script>
+</body>
+
+</html>
