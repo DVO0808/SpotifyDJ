@@ -1,0 +1,32 @@
+#signUpForm{
+}
+
+#loginForm{
+}
+
+.row{
+	text-align: center;
+}
+
+.nav-wrapper{
+	background-color: #607d8b
+}
+
+.footer-copyright{
+	text-align: center;
+}
+
+
+.page-footer{
+	background-color: #607d8b
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
