@@ -2,32 +2,21 @@
 <html>
 
 <head>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- md bootstrap css cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css">
     <!--CSS-->
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/mdb.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/mdb.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/tonieStyle.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
-  <!--Navbar-->
-  <nav class="navbar navbar-dark bg-primary teal">
-      <!-- Collapse button-->
-      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
-          <i class="fa fa-bars"></i>
-      </button>
-      <div class="container">
-          <!--Collapse content-->
-          <div class="collapse navbar-toggleable-xs" id="collapseEx2">
-              <!--Navbar Brand-->
-              <a class="navbar-brand">Spotify DJ</a>
-          </div>
-          <!--/.Collapse content-->
-      </div>
+  <nav class="navbar navbar-dark teal">
+    <div class="container">
+      <a class="navbar-brand">Spotify DJ</a>
+    </div>
   </nav>
-  <!--/.Navbar-->
+
 
 <!-- loginform -->
   <div id="loginForm" class="container col-md-6">
@@ -111,7 +100,6 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-    <script src="js/app.js"></script>
     <script type="text/javascript">
         $('#signUp').on("click", function() {
             var userInput = {

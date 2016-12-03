@@ -1,15 +1,6 @@
-#signUpForm{
-}
-
-#loginForm{
-}
-
-.row{
-	text-align: center;
-}
-
-.nav-wrapper{
-	background-color: #607d8b
+#logout,
+#welcome{
+	display: block;
 }
 
 .footer-copyright{
